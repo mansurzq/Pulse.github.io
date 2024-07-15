@@ -1,9 +1,9 @@
-$(document).ready(function () {
+$(document).ready(function () { 
     $('.carousel__inner').slick({
         speed: 1200,
         adaptiveHeight: true,
-        prevArrow: '<button type="button" class="slick-prev"><img src="icons/left.svg"></button>',
-        nextArrow: '<button type="button" class="slick-next"><img src="icons/right.svg"></button>',
+        prevArrow: '<button type="button" class="slick-prev"><img src="icons/left.png"></button>',
+        nextArrow: '<button type="button" class="slick-next"><img src="icons/right.png"></button>',
         responsive: [
             {
                 breakpoint: 992,
@@ -14,7 +14,7 @@ $(document).ready(function () {
             }
         ]
     });
-
+ 
     $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function () {
         $(this)
             .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
@@ -85,9 +85,11 @@ $(document).ready(function () {
 
     $('form').submit(function(e) {
         e.preventDefault();
+
         if (!$(this).valid()) {
             return;
         }
+        
         $.ajax({
             type: "POST",
             url: "mailer/smart.php",
@@ -101,8 +103,6 @@ $(document).ready(function () {
         });
         return false;
     });
-
-    // Smooth scroll and pageup
 
     $(window).scroll(function() {
         if ($(this).scrollTop() > 1600) {
